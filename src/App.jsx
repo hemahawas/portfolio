@@ -50,11 +50,6 @@ function App() {
 
   return (
     <main className="shell">
-      <div className="topbar">
-        <a className="brand" href="/" aria-label="Portfolio home">IR<span>.</span></a>
-        <span className="live-indicator"><span className="dot" /> LIVE PORTFOLIO</span>
-      </div>
-
       <section className="content" aria-live="polite">
         {status === 'loading' && (
           <div className="state-card"><span className="spinner" /><p>Loading portfolio…</p></div>
@@ -79,11 +74,6 @@ function App() {
           </div>
         )}
       </section>
-
-      <footer className="footer">
-        <span>Built with React · Content managed through Supabase</span>
-        {lastUpdated && <span>Synced {lastUpdated.toLocaleTimeString()}</span>}
-      </footer>
     </main>
   );
 }
