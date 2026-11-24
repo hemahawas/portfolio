@@ -1,0 +1,56 @@
+.shell {
+  min-height: 100vh;
+  padding: 30px clamp(20px, 5vw, 72px) 22px;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(ellipse at 50% -18%, rgba(80, 95, 130, .2), transparent 48%),
+    #0b0d12;
+}
+.topbar, .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.brand { font-size: 25px; font-weight: 800; letter-spacing: -1.5px; }
+.brand span { color: #b6f36a; }
+.live-indicator, .footer {
+  color: #858b98;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .08em;
+}
+.live-indicator { display: flex; align-items: center; gap: 9px; }
+.dot { width: 7px; height: 7px; border-radius: 50%; background: #b6f36a; box-shadow: 0 0 12px #b6f36a66; }
+.content { flex: 1; display: grid; place-items: center; padding: 42px 0; }
+.state-card {
+  max-width: 520px;
+  text-align: center;
+  padding: 42px 32px;
+  border: 1px solid #242833;
+  border-radius: 22px;
+  background: #11141b;
+}
+.state-card h1 { margin: 12px 0; font-size: clamp(30px, 5vw, 46px); letter-spacing: -.05em; }
+.state-card p:not(.eyebrow) { color: #969daa; line-height: 1.7; }
+.eyebrow { color: #b6f36a; font: 11px 'DM Mono', monospace; letter-spacing: .15em; }
+.spinner { display: inline-block; width: 24px; height: 24px; border: 2px solid #353a46; border-top-color: #b6f36a; border-radius: 50%; animation: spin .8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.portfolio-frame {
+  width: min(100%, 1180px);
+  min-height: min(75vh, 760px);
+  overflow: hidden;
+  border: 1px solid #252a35;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 28px 90px #0006;
+}
+.portfolio-frame iframe { display: block; width: 100%; min-height: min(75vh, 760px); border: 0; background: white; }
+.footer { border-top: 1px solid #1c2028; padding-top: 18px; letter-spacing: 0; font-size: 10px; }
+@media (max-width: 600px) {
+  .shell { padding: 22px 16px 16px; }
+  .content { padding: 28px 0; }
+  .portfolio-frame, .portfolio-frame iframe { min-height: 78vh; }
+  .footer { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
